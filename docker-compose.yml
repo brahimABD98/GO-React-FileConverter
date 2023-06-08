@@ -1,0 +1,50 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: dockerfile
+    image: brahimabd98/react-go-file-converter-backend:latest
+    ports:
+      - 1100:1100
+    depends_on:
+      - db
+    networks:
+      - go-react-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    image: brahimabd98/react-go-file-converter-frontend:latest
+    ports:
+      - 4173:80
+    depends_on:
+      - db
+    networks:
+      - go-react-network
+
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: psql -U postgres -q -d postgres -c "SELECT 'ready';"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+    networks:
+      - go-react-network
+networks:
+  go-react-network:
+
+volumes:
+  db_data:

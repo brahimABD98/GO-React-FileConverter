@@ -1,0 +1,16 @@
+# Ignore common Go files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+.idea
+.vscode
+vendor/
+
+# Ignore Go build artifacts
+build/
+bin/
+
+# Ignore editor-specific files
+*.swp

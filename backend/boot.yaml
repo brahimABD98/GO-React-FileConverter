@@ -1,0 +1,38 @@
+# boot.yaml
+
+postgres:
+  - name: file_converter_app
+    enabled: true
+    domain: "*"
+    addr: "localhost:5432"
+    user: "postgres"
+    pass: "postgres"
+
+    database:
+      - name : user
+        autoCreate: true
+
+gin:
+  - name: backend-file-converter
+    port: 1100
+    enabled: true
+    commonService:
+      enabled: true
+    sw:
+      enabled: true
+    docs:
+      enabled: true
+    prom:
+      enabled: true
+    middleware:
+      logging:
+        enabled: true
+      prom:
+        enabled: true
+
+    interceptors:
+      cors:
+        enabled: true
+        allowOrigins:
+          - "http://localhost:*"
+

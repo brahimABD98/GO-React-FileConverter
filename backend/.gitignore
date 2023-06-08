@@ -1,0 +1,23 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go
+/bin
+/vendor
+/go.sum
+
+# Gin specific
+/.air
+
+# IDE specific
+.idea/
+.vscode/
+*.code-workspace
+
+# Logs
+/log/
+*.log

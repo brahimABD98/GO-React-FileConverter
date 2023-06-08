@@ -1,0 +1,7 @@
+# Ignore development dependencies
+node_modules/
+
+# Ignore build artifacts
+build/
+
+.vscosde 
