@@ -16,7 +16,7 @@ This is a simple file converter written in Go ([rk-gin](https://github.com/rooki
 ### Prerequisites
 - Go 1.20
 - Node 14.15.4
-- postgres (for authentication if you want to use auth)
+- postgres (for authentication)
 - Docker 20.10.5 (optional,with docker-compose)
 
 
