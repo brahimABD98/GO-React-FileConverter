@@ -4,7 +4,7 @@ services:
     build:
       context: ./backend
       dockerfile: dockerfile
-    image: brahimabd98/react-go-file-converter-backend:latest
+    # image: brahimabd98/react-go-file-converter-backend:latest
     ports:
       - 1100:1100
     depends_on:
@@ -16,7 +16,7 @@ services:
     build:
       context: ./frontend
       dockerfile: dockerfile
-    image: brahimabd98/react-go-file-converter-frontend:latest
+    # image: brahimabd98/react-go-file-converter-frontend:latest
     ports:
       - 4173:80
     depends_on:
