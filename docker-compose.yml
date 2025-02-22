@@ -9,6 +9,8 @@ services:
       - 1100:1100
     depends_on:
       - db
+    environment:
+      DB_HOST: db
     networks:
       - go-react-network
 
@@ -28,7 +30,9 @@ services:
     image: postgres:latest
     restart: always
     environment:
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: file_converter_app
     ports:
       - 5432:5432
     volumes:

@@ -188,7 +188,7 @@ func TransformImage(ctx *gin.Context) {
 		return
 	}
 
-	_, err := imaging.Open(input.Filename, imaging.AutoOrientation(true))
+	_, err = imaging.Open(input.Filename, imaging.AutoOrientation(true))
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": "no valid file"})
 	}
